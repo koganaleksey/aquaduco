@@ -156,27 +156,27 @@ function deploy() {
   log(chalk.red.bold('---------------DEPLOY TO GITHUB PAGES---------------'));
   return src('dist/**/*')
     .pipe(ghPages({
-      remoteUrl: 'https://github.com/koganaleksey/hiltm.git',
+      remoteUrl: 'https://github.com/koganaleksey/aquaduco.git',
       branch: 'build',
       message: 'Automated push via gulp'
     }));
 }
 
 // TO HOSTING
-function ftpDeploy() {
-  log(chalk.red.bold('---------------DEPLOY TO HOSTING---------------'));
-  const conn = ftp.create({
-    host: 'hiltm.beget.tech',
-    user: 'hiltm',
-    password: 'Gc5seP1x',
-    parallel: 10
-  });
-  const globs = [
-    'dist/**/*'
-  ];
-  return src(globs, { buffer: false })
-    .pipe(conn.dest('/hiltm/public_html/'));
-}
+// function ftpDeploy() {
+//   log(chalk.red.bold('---------------DEPLOY TO HOSTING---------------'));
+//   const conn = ftp.create({
+//     host: 'hiltm.beget.tech',
+//     user: 'hiltm',
+//     password: 'Gc5seP1x',
+//     parallel: 10
+//   });
+//   const globs = [
+//     'dist/**/*'
+//   ];
+//   return src(globs, { buffer: false })
+//     .pipe(conn.dest('/hiltm/public_html/'));
+// }
 
 // END DEPLOY
 
@@ -370,7 +370,7 @@ function minifyCss() {
 exports.development = series(cleanDist, copyFont, copyActions, copyPHP, copyFavicon, jsVendor, cssVendor, copyImages, compileHTML, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
 
 // PRODUCTION & DEPLOY
-exports.production = series(cleanDist, compileSCSS, copyFont, copyActions, copyPHP, copyFavicon, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, prettyHTML, minifyHTML, generateDocs, deploy, ftpDeploy);
+exports.production = series(cleanDist, compileSCSS, copyFont, copyActions, copyPHP, copyFavicon, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, prettyHTML, minifyHTML, generateDocs, deploy); // ftpDeploy
 
 // RUN ALL LINTERS
 exports.lint = series(htmlLint, scssLint, jsLint);
