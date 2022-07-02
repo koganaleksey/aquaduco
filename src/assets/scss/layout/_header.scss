@@ -2,14 +2,27 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 .navbar {
-    padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 .fixed-top {
-    border-bottom: 1px solid $gray-100;
+  border-bottom: 1px solid $gray-100;
 }
 
 .nav-link,
 .dropdown-item {
-    font-weight: 700;
+  font-weight: 700;
+}
+
+body {
+  background-image: url("../img/line.svg");
+  background-repeat: no-repeat;
+  background-size: auto 25px;
+}
+
+.header {
+  margin: 25px 0 0 0;
+  background-image: url("../img/top_pattern.svg");
+  background-size: auto 100%;
+  background-position: left bottom;
 }

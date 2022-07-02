@@ -8,10 +8,12 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border-radius: 0 !important;
 }
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /**
@@ -34,6 +36,6 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline !important;
+    // text-decoration: underline !important;
   }
 }

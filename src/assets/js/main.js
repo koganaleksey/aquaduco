@@ -29,7 +29,8 @@ $(document).ready(function () {
 
   // Cover img effect
 
-  const img = document.querySelector("#equipment-img");
+  const img = document.querySelector("#cover-img");
+  const img2 = document.querySelector("#wave1");
   const windowWidth = window.innerWidth / 5;
   const windowHeight = window.innerHeight / 5;
 
@@ -37,7 +38,14 @@ $(document).ready(function () {
     const mouseX = e.clientX / windowWidth;
     const mouseY = e.clientY / windowHeight;
 
-    img.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+    img.style.transform = `translate3d(${mouseX + 7}%, ${mouseY + 7}%, 0)`;
+  });
+
+  img2.addEventListener("mousemove", (e) => {
+    const mouseX = e.clientX / windowWidth;
+    const mouseY = e.clientY / windowHeight;
+
+    img2.style.transform = `translate3d(${mouseX + 2}%, ${mouseY + 2}%, 0)`;
   });
 
   // END Cover img effect
@@ -63,12 +71,12 @@ $(document).ready(function () {
   // End Burger Menu
 
   // Slow Links
-  $(".nav, #cover, #footernav").on("click", "a", function (event) {
-    event.preventDefault();
-    var id = $(this).attr("href"),
-      top = $(id).offset().top;
-    $("body,html").animate({ scrollTop: top }, 1500);
-  });
+  // $(".nav, #cover, #footernav").on("click", "a", function (event) {
+  //   event.preventDefault();
+  //   var id = $(this).attr("href"),
+  //     top = $(id).offset().top;
+  //   $("body,html").animate({ scrollTop: top }, 1500);
+  // });
   // End // Slow Links
 
   // Form Validation
