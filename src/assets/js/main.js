@@ -1,12 +1,12 @@
 "use strict";
 
-if (navigator.language || navigator.userLanguage === "ru_RU") {
-  document.documentElement.lang = "ru";
-  document.title = 'Компания "Хил Гурлушык"';
-} else {
-  document.documentElement.lang = "en";
-  document.title = 'Company "Hil Gurlushyk"';
-}
+// if (navigator.language || navigator.userLanguage === "ru_RU") {
+//   document.documentElement.lang = "ru";
+//   document.title = 'Компания "Хил Гурлушык"';
+// } else {
+//   document.documentElement.lang = "en";
+//   document.title = 'Company "Hil Gurlushyk"';
+// }
 
 $(document).ready(function () {
   $("body").autoPadding({
