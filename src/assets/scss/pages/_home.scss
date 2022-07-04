@@ -2,16 +2,6 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.en,
-.ru {
-  display: none;
-}
-
-.en:lang(en),
-.ru:lang(ru) {
-  display: block;
-}
-
 .cover-right {
   background-image: url("../img/aqueducts.svg");
   background-repeat: no-repeat;
@@ -36,7 +26,7 @@
 .about {
   background: url("../img/about_pattern.svg");
   background-size: auto 100%;
-  background-position: center;
+  background-repeat: repeat-x;
 }
 
 .wave {
@@ -49,9 +39,15 @@
   right: -125px;
 }
 
+.services-inner {
+  background-image: url("../img/wave_reflect.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
 .strengths {
   background-image: url("../img/pattern_tint.svg");
-  background-size: 100% top;
+  background-size: auto 100%;
   background-repeat: repeat-x;
   background-color: $primary;
 }
@@ -125,4 +121,26 @@
   background: none !important;
   height: 100%;
   width: 100%;
+}
+
+// MEDIA
+
+@media (max-width: 600px) {
+  .navbar-brand img {
+    width: 85%;
+  }
+  #cover h1 {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+  .cover-right {
+    background-size: 100%;
+  }
+  .cover-right img {
+    position: relative;
+    padding-top: 40px;
+  }
+  .services-inner {
+    background-image: none;
+  }
 }

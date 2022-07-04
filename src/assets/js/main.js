@@ -27,10 +27,10 @@ $(document).ready(function () {
 
   // END Language Changer
 
+
   // Cover img effect
 
   const img = document.querySelector("#cover-img");
-  const img2 = document.querySelector("#wave1");
   const windowWidth = window.innerWidth / 5;
   const windowHeight = window.innerHeight / 5;
 
@@ -39,13 +39,6 @@ $(document).ready(function () {
     const mouseY = e.clientY / windowHeight;
 
     img.style.transform = `translate3d(${mouseX + 7}%, ${mouseY + 7}%, 0)`;
-  });
-
-  img2.addEventListener("mousemove", (e) => {
-    const mouseX = e.clientX / windowWidth;
-    const mouseY = e.clientY / windowHeight;
-
-    img2.style.transform = `translate3d(${mouseX + 2}%, ${mouseY + 2}%, 0)`;
   });
 
   // END Cover img effect
